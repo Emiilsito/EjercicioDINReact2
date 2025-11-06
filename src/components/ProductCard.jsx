@@ -1,23 +1,38 @@
 export default function ProductCard({ producto }) {
   return (
-  <div className="bg-white rounded-2xl shadow-custom p-4 flex flex-col items-center border border-(--color-grey-5) hover:scale-105 transition-transform duration-200 ease-in-out">
-      {/* Contenedor de imagen con relación cuadrada */}
-  <div className="w-full aspect-square overflow-hidden rounded-xl mb-3 flex items-center justify-center bg-(--color-white-2)">
+    <div
+      className="rounded-2xl shadow-custom p-4 flex flex-col items-center hover:scale-105 transition-transform duration-200 ease-in-out"
+      style={{
+        backgroundColor: "var(--color-white)",
+        border: `1px solid var(--color-grey-5)`
+      }}
+    >
+      {/* Imagen */}
+      <div
+        className="w-full h-48 overflow-hidden rounded-xl mb-3 flex items-center justify-center"
+        style={{ backgroundColor: "var(--color-white-2)" }}
+      >
         <img
           src={producto.img}
           alt={producto.nombre}
-          className="object-contain w-full h-full"
+          className="object-contain max-h-full max-w-full"
           loading="lazy"
         />
       </div>
 
-      {/* Nombre del producto */}
-  <h2 className="text-lg font-semibold text-(--color-grey-3) mb-1 text-center">
+      {/* Nombre */}
+      <h2
+        className="text-lg font-semibold mb-1 text-center"
+        style={{ color: "var(--color-grey-2)" }}
+      >
         {producto.nombre}
       </h2>
 
-      {/* Precio del producto */}
-  <p className="text-(--color-primary) text-base font-bold">
+      {/* Precio */}
+      <p
+        className="text-base font-bold"
+        style={{ color: "var(--color-primary)" }}
+      >
         {producto.precio}
       </p>
     </div>
